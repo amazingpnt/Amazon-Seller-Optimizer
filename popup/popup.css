@@ -1,0 +1,14 @@
+
+body {
+    width: 400px;
+    height: 300px;
+    margin: 0;
+    text-align: center;
+}
+
+#productName {
+    font-size: large;
+    margin-top: 100px;
+}
+ 
+

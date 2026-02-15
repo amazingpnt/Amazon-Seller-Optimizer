@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Product name",
+  "version": "1.0.0",
+  "description": "Shows current product name",
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "*://www.amazon.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.amazon.com/*/dp/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}
