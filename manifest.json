@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Product Info",
+  "name": "Product Sellers",
   "version": "1.0.0",
-  "description": "Shows amazon product name, first seller and its rating",
+  "description": "Shows all amazon product seller names, ratings and rating percentage.",
   "permissions": ["activeTab"],
   "host_permissions": [
     "*://www.amazon.com/*"
