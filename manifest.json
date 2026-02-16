@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Product Sellers",
+  "name": "Amazon Seller Optimizer",
   "version": "1.0.0",
   "description": "Shows all amazon product seller names, ratings and rating percentage.",
   "permissions": ["activeTab"],

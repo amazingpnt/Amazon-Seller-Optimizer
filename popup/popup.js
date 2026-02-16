@@ -2,7 +2,7 @@ function createSellerElements(sellers) {
   const container = document.getElementById("sellers");
   container.innerHTML = ""; // Clear existing content
   
-  // Calculate score for each seller: (positive ratings + 1) / (total ratings + 1)
+  // Calculate score for each seller: (positive ratings + 1) / (total ratings + 2)
   const sellersWithScore = sellers.map(seller => {
     const positiveRatings = (seller.ratingPercentage * seller.ratingsCount) / 100;
     const score = (positiveRatings + 1) / (seller.ratingsCount + 2);
