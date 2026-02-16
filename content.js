@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     let sellers = [];
     
     // Loop through all sellers
-    for (let i = 1; i < sellerElements.length; i++) {
+    for (let i = 0; i < sellerElements.length; i++) {
       const name = sellerElements[i] ? sellerElements[i].textContent.trim() : "";
       const ratingText = ratingElements[i] ? ratingElements[i].textContent.trim() : '';
       

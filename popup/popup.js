@@ -2,11 +2,25 @@ function createSellerElements(sellers) {
   const container = document.getElementById("sellers");
   container.innerHTML = ""; // Clear existing content
   
-  sellers.forEach((seller, i) => {
+  // Calculate score for each seller: (positive ratings + 1) / (total ratings + 1)
+  const sellersWithScore = sellers.map(seller => {
+    const positiveRatings = (seller.ratingPercentage * seller.ratingsCount) / 100;
+    const score = (positiveRatings + 1) / (seller.ratingsCount + 1);
+    return { ...seller, score };
+  });
+  
+  // Sort by score descending (best seller first)
+  sellersWithScore.sort((a, b) => b.score - a.score);
+  
+  // Display sellers
+  sellersWithScore.forEach((seller, i) => {
     const div = document.createElement("div");
     div.className = "seller-item";
     
+    const badge = i === 0 ? '<span style="background-color: gold; padding: 2px 6px; border-radius: 3px; font-weight: bold;">⭐ BEST</span> ' : '';
+    
     div.innerHTML = `
+      ${badge}
       <span class="seller-name">Seller: ${seller.name}</span>
       <span>&nbsp;|&nbsp;</span>
       <span class="seller-rating">${seller.ratingsCount} ratings</span>
