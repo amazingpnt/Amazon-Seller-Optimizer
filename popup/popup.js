@@ -5,7 +5,7 @@ function createSellerElements(sellers) {
   // Calculate score for each seller: (positive ratings + 1) / (total ratings + 1)
   const sellersWithScore = sellers.map(seller => {
     const positiveRatings = (seller.ratingPercentage * seller.ratingsCount) / 100;
-    const score = (positiveRatings + 1) / (seller.ratingsCount + 1);
+    const score = (positiveRatings + 1) / (seller.ratingsCount + 2);
     return { ...seller, score };
   });
   
