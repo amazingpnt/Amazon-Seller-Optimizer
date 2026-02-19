@@ -15,6 +15,11 @@ div {
     max-height: 550px;
 }
 
+.hover {
+    color:blue;
+    cursor:pointer;
+}
+
 .seller-item {
     padding: 8px;
     border-bottom: 1px solid #ddd;

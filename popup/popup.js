@@ -15,6 +15,9 @@ function createSellerElements(sellers) {
   sellersWithScore.forEach((seller, i)=>{
     const div=document.createElement("div");
     div.className="seller-item";
+    div.addEventListener("mouseenter", ()=>div.classList.add("hover"));
+    div.addEventListener("mouseleave", ()=>div.classList.remove("hover"));
+    div.addEventListener("click", ()=>queryActiveTab({type:"SCROLL_TO_SELLER"}, null));
     
     const badge=(i===0)? '<span style="background-color: gold; padding: 2px 6px; border-radius: 3px; font-weight: bold;">⭐ BEST</span> ': '';
     
@@ -52,7 +55,7 @@ queryActiveTab({type:"GET_ALL_SELLERS"}, (response)=>{
   const sellers=response && response.value? response.value: [];
   console.log("Fetched sellers:", sellers);
   
-  if(sellers.length>0) {
+  if(sellers.length>0){
     createSellerElements(sellers);
   }else{
     console.warn("No sellers found");

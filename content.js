@@ -33,4 +33,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse)=>{
     sendResponse({value:sellers});
     return;
   }
+
+  if(message.type=="SCROLL_TO_SELLER"){
+    sellerWindow=document.getElementById("all-offers-display-scroller");
+    sellerWindow.scrollBy({top:200, behavior:"smooth"});
+  }
 });
